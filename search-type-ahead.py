@@ -148,14 +148,14 @@ def writeProductsToExcel(products, domain):
             row += 1
             worksheet.write(row, col, se) 
             worksheet.write(row, col + 1, product.name + " student license")
-            if len(product.overview.split("/")) > 4:
-               response = requests.get(url = "https://" + domain + "/education/free-software/" + product.overview.split("/")[4], params = {})
-               if response.status_code == 200:
-                  worksheet.write(row, col + 2, "https://" + domain + "/education/free-software/" + product.overview.split("/")[4])
-               else:
-                  worksheet.write(row, col + 2, "NA")
-            else: 
-               worksheet.write(row, col + 2, "NA")
+            # if len(product.overview.split("/")) > 4:
+            #    response = requests.get(url = "https://" + domain + "/education/free-software/" + product.overview.split("/")[4], params = {})
+            #    if response.status_code == 200:
+            #       worksheet.write(row, col + 2, "https://" + domain + "/education/free-software/" + product.overview.split("/")[4])
+            #    else:
+            #       worksheet.write(row, col + 2, "NA")
+            # else: 
+            #    worksheet.write(row, col + 2, "NA")
 
             row += 1
             worksheet.write(row, col, "") 
